@@ -13,5 +13,14 @@ const client = SplitSuite({
 }).client();
 
 client.on(client.Event.SDK_READY, function() {
-  console.log('SDK ready');
+
+  console.log('off: SDK ready');
+
+  let imageSize = client.getTreatment(process.env.FEATURE_FLAG_IMAGE_SIZE);
+  console.log(`off: image size is ${imageSize}`)
+
+  // if the query parameter is not one of the the imgur size modifiers, then don't use it
+  if( ! ['b', 's', 't', 'm', 'l', 'h'].includes(imageSize) ) imageSize = '';
+
+  document.getElementById('street_img').src = "https://i.imgur.com/q9b5x97" + imageSize + ".png";
 });
