@@ -2,4 +2,4 @@
 // - `import * as SplitSuiteModule from '@splitsoftware/browser-suite';`
 // - `const { SplitSuite, SplitRumAgent, webVitals } = require('@splitsoftware/browser-suite');`
 
-export { SplitSuite, SplitRumAgent, webVitals } from '@splitsoftware/browser-suite';
+export { SplitSuite, SplitRumAgent } from '@splitsoftware/browser-suite';

@@ -1,5 +1,5 @@
 /* Dynamically import a local module, which in turn imports '@splitsoftware/browser-rum-agent' for tree-shaking, resulting in a smaller app */
-import('./browser-split-suite').then(({ SplitSuite, SplitRumAgent, webVitals }) => {
+import('./browser-split-suite').then(({ SplitSuite, SplitRumAgent }) => {
 
   const suite = SplitSuite({
     core: {
@@ -11,8 +11,6 @@ import('./browser-split-suite').then(({ SplitSuite, SplitRumAgent, webVitals }) 
       trafficType: 'user'
     }
   });
-  
-  SplitRumAgent.register(webVitals());
 
 }).catch(error => {
   console.log('An error occurred while loading the module: ' + error);

@@ -1,7 +1,7 @@
 /* Statically import '@splitsoftware/browser-suite' from NPM */
-import { SplitSuite, SplitRumAgent, webVitals } from '@splitsoftware/browser-suite';
+import { SplitSuite, SplitRumAgent } from '@splitsoftware/browser-suite';
 
-const suite = SplitSuite({
+const client = SplitSuite({
   core: {
     authorizationKey: process.env.CLIENT_SIDE_SDK_KEY,
 
@@ -10,6 +10,8 @@ const suite = SplitSuite({
     // Specifying the traffic type for the user key is optional, the value is 'user' by default
     trafficType: 'user'
   }
-});
+}).client();
 
-SplitRumAgent.register(webVitals());
+client.on(client.Event.SDK_READY, function() {
+  console.log('SDK ready');
+});
