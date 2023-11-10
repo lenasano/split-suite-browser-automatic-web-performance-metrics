@@ -1,4 +1,10 @@
-export function setupPageWithSplit( SplitSuite )
+/**
+ * This creates a Split client for evaluating feature flags as well as internally creating a RUM agent.
+ * The RUM agent has the webVitals event collector registered by default, so it will send web page
+ * performance metrics to Split. You can view these metrics in Data hub of the Split UI.
+ * For more information about webVitals, @see {@link https://help.split.io/hc/en-us/articles/360030898431-Browser-RUM-agent#web-vitals}.
+ */
+export function setupSplitOnPage( SplitSuite )
 {
   const client = SplitSuite({
     core: {
