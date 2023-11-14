@@ -92,3 +92,4 @@ typings/
 dist/
 server/*.json
 .vscode/
+package-lock.json

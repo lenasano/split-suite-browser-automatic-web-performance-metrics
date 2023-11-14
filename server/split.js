@@ -1,3 +1,8 @@
+// This implementation of the singleton pattern ensures
+// that only one instance of the SplitFactory is created.
+// This means that only one copy of the Split (feature flag
+// and segment) definitions are downloaded and synchronized.
+
 require('dotenv').config();
 const { SplitFactory } = require('@splitsoftware/splitio');
 
@@ -5,11 +10,6 @@ const { SplitFactory } = require('@splitsoftware/splitio');
 let client;
 
 function getSplitClient() {
-  
-  // This implementation of the singleton pattern ensures
-  // that only one instance of the SplitFactory is created.
-  // This means that only one copy of the Split (feature flag
-  // and segment) definitions are downloaded and synchronized.
 
   if (!client) {
     client = SplitFactory({

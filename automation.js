@@ -66,7 +66,10 @@ const NETWORK_CONDITIONS = {
     );
 
     // Navigate to URL
-    await page.goto (`http://localhost:3000/?id=${i}` , {waitUntil: "networkidle0", timeout: 0}); // Disabled timeout to avoid exception being thrown. If, however, the page gets 'stuck', click the refresh button.
+    await page.goto(`http://localhost:3000/?id=${i}`);
+
+    // Pause to allow time for the image to load
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     // Click on an element to start measuring First Input Delay (FID) and Interaction to Next Paint (INP) time
     await page.click('#split_logo');
