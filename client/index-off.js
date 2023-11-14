@@ -3,4 +3,4 @@ import { SplitSuite } from '@splitsoftware/browser-suite';
 
 import { setupSplitOnPage } from './split.js';
 
-setupSplitOnPage( SplitSuite )
+setupSplitOnPage(SplitSuite);

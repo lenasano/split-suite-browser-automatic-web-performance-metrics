@@ -4,7 +4,7 @@
  * performance metrics to Split. You can view these metrics in Data hub of the Split UI.
  * For more information about webVitals, @see {@link https://help.split.io/hc/en-us/articles/360030898431-Browser-RUM-agent#web-vitals}.
  */
-export function setupSplitOnPage( SplitSuite )
+export function setupSplitOnPage(SplitSuite)
 {
   const client = SplitSuite({
     core: {
